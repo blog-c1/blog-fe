@@ -1,6 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import httpProxy from 'http-proxy'
 import { appConfig } from '../../config';
+import Cookies from 'cookies'; 
 
 const proxy = httpProxy.createProxyServer();
 
@@ -15,6 +16,12 @@ export default function handler(
   res: NextApiResponse<any>
 ) {
   return new Promise((resolve) => {
+    const cookies = new Cookies(req, res);
+    const accessToken =cookies.get('access_token');
+    if(accessToken) {
+      req.headers.authorization = `Bearer ${accessToken}`;
+    }
+
     req.headers.cookie = ''
 
     proxy.web(req, res, {
