@@ -14,11 +14,18 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<any>
 ) {
-  req.headers.cookie = ''
+  return new Promise((resolve) => {
+    req.headers.cookie = ''
 
-  proxy.web(req, res, {
-    target: appConfig.server.url,
-    changeOrigin: true,
-    selfHandleResponse: false
+    proxy.web(req, res, {
+      target: appConfig.server.url,
+      changeOrigin: true,
+      selfHandleResponse: false
+    })
+
+    proxy.once('proxyRes', () => {
+      resolve(true);
+    })
   })
+  
 }
