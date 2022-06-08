@@ -14,4 +14,6 @@ axios.interceptors.response.use(
   }
 );
 
+export const fetcher = (url: string) => axiosClient.get(url);
+
 export default axiosClient;
