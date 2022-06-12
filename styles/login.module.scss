@@ -1,0 +1,15 @@
+@import "variables.scss";
+
+.wrapper {
+  background-color: $admin-primary-color;
+  font-family: $admin-primary-font;
+  height: 100vh;
+}
+
+.login-button {
+  background-color: $admin-secondary-main;
+}
+
+.login-button:hover {
+  background-color: #673ab7;
+}

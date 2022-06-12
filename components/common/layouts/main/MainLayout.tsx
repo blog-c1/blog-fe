@@ -1,4 +1,4 @@
-import MainHeader from "components/common/headers/MainHeader";
+import MainHeader from "components/common/layouts/main/Header";
 import { LayoutProps } from "models/common";
 import * as React from "react";
 

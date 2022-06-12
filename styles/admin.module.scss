@@ -1,0 +1,42 @@
+@import "variables.scss";
+
+.header {
+  background: $admin-secondary-light;
+  color: $admin-secondary-dark;
+}
+
+.header:hover {
+  background: $admin-secondary-dark;
+  color: #fff;
+}
+
+.profile {
+  border-color: $admin-primary-color;
+  background-color: $admin-primary-color;
+}
+
+.profile:hover {
+  border-color: $admin-primary-dark;
+  background-color: $admin-primary-dark !important;
+}
+
+.profile:hover svg {
+  color: $admin-primary-color;
+}
+
+.profileAvatar {
+  margin: 8px 0 8px 8px !important;
+}
+
+.sidebarGroup {
+  border-bottom: 1px solid lightgray;
+  padding: 10px 0;
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+
+.addPostHeader {
+  font-size: 1.25rem;
+  border-bottom: 1px solid lightgray;
+  padding: 20px 20px;
+}

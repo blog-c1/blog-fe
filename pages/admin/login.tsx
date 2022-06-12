@@ -1,5 +1,7 @@
+import LoginForm from "components/login/LoginForm";
 import { useAuth } from "hooks/use-auth";
 import * as React from "react";
+import styles from "styles/login.module.scss";
 
 export default function LoginPage() {
   const { login, logout } = useAuth();
@@ -25,11 +27,8 @@ export default function LoginPage() {
   };
 
   return (
-    <div>
-      <h1>Login page</h1>
-
-      <button onClick={handleLogin}>Login</button>
-      <button onClick={handleLogout}>Logout</button>
-    </div>
+    <section className={`flex justify-center items-center ${styles.wrapper}`}>
+      <LoginForm />
+    </section>
   );
 }
