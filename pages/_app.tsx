@@ -16,7 +16,9 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
     >
       <Layout>
         <Component {...pageProps} />
+        
       </Layout>
+
     </SWRConfig>
   );
 }
