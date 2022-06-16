@@ -2,7 +2,6 @@ import { Box, TextField, Button } from "@mui/material";
 import Image from "next/image";
 import * as React from "react";
 import LogoIcon from "statics/images/logo.png";
-import styles from "styles/login.module.scss";
 
 export default function LoginForm() {
   return (
@@ -24,16 +23,18 @@ export default function LoginForm() {
           Enter your credentials to continue
         </span>
       </div>
-      <TextField label="Username" variant="outlined" className="my-2" />
-      <TextField label="Password" variant="outlined" className="my-2" />
+      <div className="my-2">
+        <TextField label="Username" fullWidth variant="outlined" />
+      </div>
+      <div className="my-2">
+        <TextField label="Password" fullWidth variant="outlined" />
+      </div>
 
-      <Button
-        variant="contained"
-        type="submit"
-        className={`p-4 mt-5 ${styles["login-button"]}`}
-      >
-        Login
-      </Button>
+      <div className="py-4 mt-5">
+        <Button variant="contained" type="submit" fullWidth>
+          Login
+        </Button>
+      </div>
     </Box>
   );
 }
