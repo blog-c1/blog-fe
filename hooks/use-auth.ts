@@ -12,10 +12,10 @@ export function useAuth(options?: Partial<PublicConfiguration>) {
     ...options,
   });
 
-  async function login() {
+  async function login(username: string, password: string) {
     await authApi.login({
-      username: "test1",
-      password: "123123",
+      username,
+      password,
     });
 
     await mutate();

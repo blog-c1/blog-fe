@@ -1,10 +1,8 @@
-import React, { Component, useState } from "react";
-import { EditorState } from "draft-js";
-import dynamic from "next/dynamic";
-import { convertFromRaw, convertToRaw } from "draft-js";
+import { convertToRaw, EditorState } from "draft-js";
 import draftToHtml from "draftjs-to-html";
+import dynamic from "next/dynamic";
+import { useState } from "react";
 
-// const Editor = dynamic(() => import("react-draft-wysiwyg"), { ssr: false });
 import { EditorProps } from "react-draft-wysiwyg";
 
 const Editor = dynamic<EditorProps>(

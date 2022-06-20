@@ -1,15 +1,18 @@
-import LoginForm from "components/login/LoginForm";
+import LoginForm, { LoginFormData } from "components/login/LoginForm";
 import { useAuth } from "hooks/use-auth";
+import { useRouter } from "next/router";
 import * as React from "react";
 import styles from "styles/login.module.scss";
 
 export default function LoginPage() {
   const { login, logout } = useAuth();
+  const router = useRouter();
 
-  const handleLogin = async () => {
+  const handleLogin = async (payload: LoginFormData) => {
+    const { username, password } = payload;
     try {
-      await login();
-      // todo: redirect to dashboard
+      await login(username, password);
+      router.push("/admin");
     } catch (error) {
       // todo: handle error
       console.log("error", error);
@@ -28,7 +31,7 @@ export default function LoginPage() {
 
   return (
     <section className={`flex justify-center items-center ${styles.wrapper}`}>
-      <LoginForm />
+      <LoginForm onSubmit={(payload) => handleLogin(payload)} />
     </section>
   );
 }
